@@ -1,11 +1,10 @@
 import {Method} from './spec';
-import {Map} from 'gulp-typescript/release/utils';
 
 export default class Request {
   public url: string;
   public method: Method;
-  public headers: Map<string> = {};
-  public query: Map<string> = {};
+  public headers: object = {};
+  public query: object = {};
   public body: object;
 
   constructor(url: string, method: Method) {
