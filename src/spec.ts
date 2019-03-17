@@ -43,7 +43,7 @@ export class Spec {
    * @param middleware
    * @param parameters
    */
-  public call(name: string, middleware?: Function, parameters?: Map<string, string>): Promise<object> {
+  public call(name: string, middleware?: Function, parameters?: object): Promise<object> {
     if (this.endpoints[name] === undefined) {
       throw new Error(`${name} could not be found`);
     }

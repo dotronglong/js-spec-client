@@ -18,7 +18,7 @@ export declare class Spec {
      * @param middleware
      * @param parameters
      */
-    call(name: string, middleware?: Function, parameters?: Map<string, string>): Promise<object>;
+    call(name: string, middleware?: Function, parameters?: object): Promise<object>;
 }
 export interface Endpoint {
     url: string;
