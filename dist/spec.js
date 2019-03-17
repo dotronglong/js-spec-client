@@ -67,11 +67,11 @@ var Spec = /** @class */ (function () {
         var endpoint = this.endpoints[name];
         var request = new request_1.default(endpoint.url, endpoint.method);
         this.middlewares.forEach(function (f) { return f(request); });
-        if (middleware !== undefined)
+        if (typeof middleware === 'function')
             middleware(request);
         var url = request.toString();
         url = this.replacer.replace(url, this.parameters);
-        if (parameters !== undefined)
+        if (typeof parameters === 'object' && parameters !== null)
             url = this.replacer.replace(url, parameters);
         switch (endpoint.method) {
             case Method.GET:

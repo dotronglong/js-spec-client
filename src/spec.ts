@@ -51,11 +51,11 @@ export class Spec {
     const request: Request = new Request(endpoint.url, endpoint.method);
 
     this.middlewares.forEach(f => f(request));
-    if (middleware !== undefined) middleware(request);
+    if (typeof middleware === 'function') middleware(request);
 
     let url: string = request.toString();
     url = this.replacer.replace(url, this.parameters);
-    if (parameters !== undefined) url = this.replacer.replace(url, parameters);
+    if (typeof parameters === 'object' && parameters !== null) url = this.replacer.replace(url, parameters);
 
     switch (endpoint.method) {
       case Method.GET:
