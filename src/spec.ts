@@ -48,7 +48,7 @@ export class Spec {
       throw new Error(`${name} could not be found`);
     }
     const endpoint: Endpoint = this.endpoints[name];
-    const request: Request = new Request(endpoint.uri, endpoint.method);
+    const request: Request = new Request(endpoint.url, endpoint.method);
 
     this.middlewares.forEach(f => f(request));
     if (middleware !== undefined) middleware(request);
@@ -75,7 +75,7 @@ export class Spec {
 }
 
 export interface Endpoint {
-  uri: string;
+  url: string;
   method: Method
 }
 

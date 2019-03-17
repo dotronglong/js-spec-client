@@ -21,7 +21,7 @@ export declare class Spec {
     call(name: string, middleware?: Function, parameters?: Map<string, string>): Promise<object>;
 }
 export interface Endpoint {
-    uri: string;
+    url: string;
     method: Method;
 }
 export declare enum Method {

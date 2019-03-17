@@ -65,7 +65,7 @@ var Spec = /** @class */ (function () {
             throw new Error(name + " could not be found");
         }
         var endpoint = this.endpoints[name];
-        var request = new request_1.default(endpoint.uri, endpoint.method);
+        var request = new request_1.default(endpoint.url, endpoint.method);
         this.middlewares.forEach(function (f) { return f(request); });
         if (middleware !== undefined)
             middleware(request);
