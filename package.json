@@ -1,0 +1,40 @@
+{
+  "name": "spec-client",
+  "version": "1.0.0",
+  "description": "A schema api client",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test:force",
+    "build": "./node_modules/.bin/gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotronglong/js-spec-client.git"
+  },
+  "keywords": [
+    "spec",
+    "api",
+    "restful",
+    "http",
+    "client"
+  ],
+  "author": "Long Do <me@dotronglong.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotronglong/js-spec-client/issues"
+  },
+  "homepage": "https://github.com/dotronglong/js-spec-client#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "chai": "^4.2.0",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-mocha": "^6.0.0",
+    "gulp-typescript": "^5.0.1",
+    "mocha": "^6.0.2",
+    "typescript": "^3.3.3333"
+  }
+}
