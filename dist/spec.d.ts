@@ -1,6 +1,8 @@
+/// <reference types="node" />
+import * as EventEmitter from 'events';
 import Replacer from './replacer';
 import Transporter from './transporter';
-export declare class Spec {
+export declare class Spec extends EventEmitter {
     private readonly _endpoints;
     private readonly _parameters;
     private readonly _middlewares;

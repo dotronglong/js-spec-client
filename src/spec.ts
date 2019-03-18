@@ -1,9 +1,10 @@
+import * as EventEmitter from 'events';
 import Replacer from './replacer';
 import Request from './request';
 import Transporter from './transporter';
 import AxiosTransporter from './transporter/axios';
 
-export class Spec {
+export class Spec extends EventEmitter {
   private readonly _endpoints: object = {};
   private readonly _parameters: object = {};
   private readonly _middlewares: Function[] = [];
@@ -11,6 +12,7 @@ export class Spec {
   private readonly _transporter: Transporter = new AxiosTransporter();
 
   constructor(endpoints?: object, parameters?: object, middlewares?: Function[], transporter?: Transporter) {
+    super();
     if (endpoints !== undefined) this._endpoints = endpoints;
     if (parameters !== undefined) this._parameters = parameters;
     if (middlewares !== undefined) this._middlewares = middlewares;

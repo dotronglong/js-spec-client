@@ -1,23 +1,40 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
+var EventEmitter = require("events");
 var replacer_1 = require("./replacer");
 var request_1 = require("./request");
 var axios_1 = require("./transporter/axios");
-var Spec = /** @class */ (function () {
+var Spec = /** @class */ (function (_super) {
+    __extends(Spec, _super);
     function Spec(endpoints, parameters, middlewares, transporter) {
-        this._endpoints = {};
-        this._parameters = {};
-        this._middlewares = [];
-        this._replacer = new replacer_1.default();
-        this._transporter = new axios_1.default();
+        var _this = _super.call(this) || this;
+        _this._endpoints = {};
+        _this._parameters = {};
+        _this._middlewares = [];
+        _this._replacer = new replacer_1.default();
+        _this._transporter = new axios_1.default();
         if (endpoints !== undefined)
-            this._endpoints = endpoints;
+            _this._endpoints = endpoints;
         if (parameters !== undefined)
-            this._parameters = parameters;
+            _this._parameters = parameters;
         if (middlewares !== undefined)
-            this._middlewares = middlewares;
+            _this._middlewares = middlewares;
         if (transporter !== undefined)
-            this._transporter = transporter;
+            _this._transporter = transporter;
+        return _this;
     }
     Object.defineProperty(Spec.prototype, "endpoints", {
         get: function () {
@@ -89,7 +106,7 @@ var Spec = /** @class */ (function () {
         }
     };
     return Spec;
-}());
+}(EventEmitter));
 exports.Spec = Spec;
 var Method;
 (function (Method) {

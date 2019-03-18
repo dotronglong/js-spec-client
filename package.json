@@ -1,6 +1,6 @@
 {
   "name": "spec-client",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A schema api client",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/dotronglong/js-spec-client#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "events": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^11.11.3",
